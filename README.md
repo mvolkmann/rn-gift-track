@@ -61,7 +61,25 @@ This includes menu items for the following:
 ESLint is not installed or configured by default.
 
 - `npm install -D eslint eslint-plugin-react eslint-plugin-react-native`
+- Create the file `.eslintrc` (see contents in this project).
+- Add the following npm script in `package.json`.
+
+  ```json
+  "lint": "eslint --ignore-path .gitignore .",
+  ```
+
+- To run, enter `npm run lint`.
 
 ## Prettier
 
 Prettier is not installed or configured by default.
+
+- `npm install -D prettier`
+- Create the file `.prettierrc` (see contents in this project).
+- Add the following npm script in `package.json`.
+
+  ```json
+  "format": "prettier --write '**/*.{js,ts,tsx}'",
+  ```
+
+- To run, enter `npm run format`.

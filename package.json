@@ -5,7 +5,7 @@
   "scripts": {
     "android": "expo start --android",
     "eject": "expo eject",
-    "format": "prettier --ignore-path .gitignore",
+    "format": "prettier --write '**/*.{js,ts,tsx}'",
     "ios": "expo start --ios",
     "lint": "eslint --ignore-path .gitignore .",
     "start": "expo start",
