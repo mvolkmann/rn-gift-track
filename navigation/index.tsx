@@ -18,8 +18,11 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import About from '../screens/About';
+import Gifts from '../screens/Gifts';
+import Occasions from '../screens/Occasions';
+import People from '../screens/People';
+import Settings from '../screens/Settings';
 import {
   RootStackParamList,
   RootTabParamList,
@@ -79,17 +82,17 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="About"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({color}) => <TabBarIcon name="code" color={color} />,
+        name="About"
+        component={About}
+        options={({navigation}: RootTabScreenProps<'About'>) => ({
+          title: 'About',
+          tabBarIcon: ({color}) => <TabBarIcon name="info" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -108,11 +111,35 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="People"
+        component={People}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({color}) => <TabBarIcon name="code" color={color} />
+          title: 'People',
+          tabBarIcon: ({color}) => <TabBarIcon name="users" color={color} />
+        }}
+      />
+      <BottomTab.Screen
+        name="Occasions"
+        component={Occasions}
+        options={{
+          title: 'Occasions',
+          tabBarIcon: ({color}) => <TabBarIcon name="tree" color={color} />
+        }}
+      />
+      <BottomTab.Screen
+        name="Gifts"
+        component={Gifts}
+        options={{
+          title: 'Gifts',
+          tabBarIcon: ({color}) => <TabBarIcon name="gift" color={color} />
+        }}
+      />
+      <BottomTab.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({color}) => <TabBarIcon name="gear" color={color} />
         }}
       />
     </BottomTab.Navigator>
