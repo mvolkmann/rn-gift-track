@@ -5,7 +5,9 @@
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "ecmaVersion": 2019,
+    "sourceType": "module"
   },
   "plugins": ["react", "react-native"],
   "rules": {
